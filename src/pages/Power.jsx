@@ -3,6 +3,7 @@ import { BsCurrencyDollar } from "react-icons/bs";
 import { GoPrimitiveDot } from "react-icons/go";
 import { IoIosMore } from "react-icons/io";
 import { DropDownListComponent } from "@syncfusion/ej2-react-dropdowns";
+import axios from "axios";
 
 import { Stacked, Pie, Button, LineChart, SparkLine } from "../components";
 import {
@@ -35,17 +36,32 @@ const Ecommerce = () => {
   const { currentColor, currentMode } = useStateContext();
   const [powerProject, setPowerProject] = useState([]);
 
+  const sendGetRequest = async () => {
+    try {
+      const resp = await axios.get(
+        "http://localhost/misApp/public/api/powerProjectsData"
+      );
+      setPowerProject(await resp.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   useEffect(() => {
-    const sendGetRequest = async () => {
-      try {
-        const resp = await axios.get(
-          "http://localhost/misApp/public/api/powerProjectsData"
-        );
-        setPowerProject(await resp.data);
-      } catch (err) {}
-    };
     sendGetRequest();
   }, []);
+  // console.log(powerProject);
+
+  // useEffect(() => {
+  //   const getPowerProjects = async () => {
+  //     const req = await fetch(
+  //       "http://localhost/misApp/public/api/powerProjectsData"
+  //     );
+  //     const getres = await req.json();
+  //     setPowerProject(await getres);
+  //   };
+  //   getPowerProjects();
+  // }, []);
   console.log(powerProject);
 
   return (
@@ -55,24 +71,26 @@ const Ecommerce = () => {
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400">Total Projects</p>
-              <p className="text-2xl">$63,448.78</p>
+              <p className="text-2xl">
+                {powerProject.total_power_projects_running} NOS
+              </p>
             </div>
-            <button
+            {/* <button
               type="button"
               style={{ backgroundColor: currentColor }}
               className="text-2xl opacity-0.9 text-white hover:drop-shadow-xl rounded-full  p-4"
             >
               <BsCurrencyDollar />
-            </button>
+            </button> */}
           </div>
-          <div className="mt-6">
+          {/* <div className="mt-6">
             <Button
               color="white"
               bgColor={currentColor}
               text="Download"
               borderRadius="10px"
             />
-          </div>
+          </div> */}
         </div>
         <div className="flex m-3 flex-wrap justify-center gap-1 items-center">
           {earningData.map((item) => (
