@@ -4,8 +4,14 @@ import { GoPrimitiveDot } from "react-icons/go";
 import { IoIosMore } from "react-icons/io";
 import { DropDownListComponent } from "@syncfusion/ej2-react-dropdowns";
 import axios from "axios";
+import {
+  MdOutlineSupervisorAccount,
+  MdLanguage,
+  MdOutlineAttachMoney,
+} from "react-icons/md";
 
 import { Stacked, Pie, Button, LineChart, SparkLine } from "../components";
+import InvoiceData from "../data/InvoiceData";
 import {
   earningData,
   medicalproBranding,
@@ -39,7 +45,7 @@ const Ecommerce = () => {
   const sendGetRequest = async () => {
     try {
       const resp = await axios.get(
-        "http://localhost/misApp/public/api/powerProjectsData"
+        "http://192.168.1.10/hrms/public/api/dashboardData"
       );
       setPowerProject(await resp.data);
     } catch (err) {
@@ -50,19 +56,6 @@ const Ecommerce = () => {
   useEffect(() => {
     sendGetRequest();
   }, []);
-  // console.log(powerProject);
-
-  // useEffect(() => {
-  //   const getPowerProjects = async () => {
-  //     const req = await fetch(
-  //       "http://localhost/misApp/public/api/powerProjectsData"
-  //     );
-  //     const getres = await req.json();
-  //     setPowerProject(await getres);
-  //   };
-  //   getPowerProjects();
-  // }, []);
-  console.log(powerProject);
 
   return (
     <div className="mt-24">
@@ -70,10 +63,19 @@ const Ecommerce = () => {
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
           <div className="flex justify-between items-center">
             <div>
-              <p className="font-bold text-gray-400">Total Projects</p>
-              <p className="text-2xl">
-                {powerProject.total_power_projects_running} NOS
-              </p>
+              <button
+                type="button"
+                className="text-2xl opacity-0.9 rounded-full  p-4 hover:drop-shadow-xl"
+                style={{
+                  color: "red",
+                  backgroundColor: "Yellow",
+                  fontSize: "50px",
+                }}
+              >
+                <MdLanguage />
+              </button>
+              <p className="font-bold text-black-400">Running Projects</p>
+              <p className="text-2xl font-bold">NOS</p>
             </div>
             {/* <button
               type="button"
@@ -92,29 +94,7 @@ const Ecommerce = () => {
             />
           </div> */}
         </div>
-        <div className="flex m-3 flex-wrap justify-center gap-1 items-center">
-          {earningData.map((item) => (
-            <div
-              key={item.title}
-              className="bg-white h-44 dark:text-gray-200 dark:bg-secondary-dark-bg md:w-56  p-4 pt-9 rounded-2xl "
-            >
-              <button
-                type="button"
-                style={{ color: item.iconColor, backgroundColor: item.iconBg }}
-                className="text-2xl opacity-0.9 rounded-full  p-4 hover:drop-shadow-xl"
-              >
-                {item.icon}
-              </button>
-              <p className="mt-3">
-                <span className="text-lg font-semibold">{item.amount}</span>
-                <span className={`text-sm text-${item.pcColor} ml-2`}>
-                  {item.percentage}
-                </span>
-              </p>
-              <p className="text-sm text-gray-400  mt-1">{item.title}</p>
-            </div>
-          ))}
-        </div>
+        <InvoiceData />
       </div>
 
       <div className="flex gap-10 flex-wrap justify-center">

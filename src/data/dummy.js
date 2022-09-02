@@ -5,7 +5,7 @@ import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft
 import { BiColorFill } from 'react-icons/bi';
 import { IoMdContacts } from 'react-icons/io';
 import { RiContactsLine, RiStockLine } from 'react-icons/ri';
-import { MdOutlineSupervisorAccount } from 'react-icons/md';
+import { MdOutlineSupervisorAccount, MdLanguage, MdOutlineAttachMoney } from 'react-icons/md';
 import { HiOutlineRefresh } from 'react-icons/hi';
 import { TiTick } from 'react-icons/ti';
 import { GiLouvrePyramid } from 'react-icons/gi';
@@ -615,7 +615,8 @@ export const chatData = [
 
 export const earningData = [
   {
-    icon: <MdOutlineSupervisorAccount />,
+    
+    icon: <MdOutlineAttachMoney />,
     amount: '39,354',
     percentage: '-4%',
     title: 'Customers',
@@ -852,6 +853,7 @@ export const userProfileData = [
     title: 'My Profile',
     desc: 'Account Settings',
     iconColor: '#03C9D7',
+    size:50,
     iconBg: '#E5FAFB',
   },
   {
