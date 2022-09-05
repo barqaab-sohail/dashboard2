@@ -658,7 +658,7 @@ export const recentTransactions = [
   {
     icon: <BsCurrencyDollar />,
     amount: '+$350',
-    title: 'Paypal Transfer',
+    title: 'Paypal Transfer Paypal Transfer Paypal Transfer Paypal Transfer Paypal Transfer Paypal Transfer',
     desc: 'Money Added',
     iconColor: '#03C9D7',
     iconBg: '#E5FAFB',

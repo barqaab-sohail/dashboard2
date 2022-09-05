@@ -47,7 +47,7 @@ const InvoiceData = () => {
   const earningData = [
     {
       icon: "Invoices",
-      amount: powerProject.total_Power_invoice_cost,
+      amount: powerProject.invoice_90_days,
       percentage: "",
       title: "last 90 Days",
       iconColor: "#03C9D7",
@@ -56,7 +56,7 @@ const InvoiceData = () => {
     },
     {
       icon: "Payments",
-      amount: powerProject.total_power_payment_received,
+      amount: powerProject.received_90_days,
       percentage: "",
       title: "Last 90 Days",
       iconColor: "rgb(0, 194, 146)",
@@ -65,7 +65,7 @@ const InvoiceData = () => {
     },
     {
       icon: "Invoices",
-      amount: "39,354",
+      amount:  powerProject.invoice_60_days,
       percentage: "",
       title: "last 60 Days",
       iconColor: "#03C9D7",
@@ -74,7 +74,7 @@ const InvoiceData = () => {
     },
     {
       icon: "Payments",
-      amount: "39,354",
+      amount: powerProject.received_60_days,
       percentage: "",
       title: "Last 60 Days",
       iconColor: "rgb(0, 194, 146)",
