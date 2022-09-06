@@ -10,6 +10,7 @@ import {
   MdLanguage,
   MdOutlineAttachMoney,
 } from "react-icons/md";
+import PowerRunningProjects from "./PowerRunningProjects";
 
 import { Stacked, Pie, Button, LineChart, SparkLine } from "../components";
 import InvoiceData from "../data/InvoiceData";
@@ -46,7 +47,7 @@ const Ecommerce = () => {
   const sendGetRequest = async () => {
     try {
       const resp = await axios.get(
-        "http://192.168.1.10/hrms/public/api/dashboardData"
+        "http://192.168.1.10/hrms/public/api/projectData"
       );
       setPowerProject(await resp.data);
     } catch (err) {
@@ -99,7 +100,7 @@ const Ecommerce = () => {
         </div>
         <InvoiceData />
       </div>
-      <RunningProjects />
+      <PowerRunningProjects />
       <div className="flex gap-10 flex-wrap justify-center">
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780  ">
           <div className="flex justify-between">
