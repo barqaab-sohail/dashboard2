@@ -47,18 +47,18 @@ const InvoiceData = () => {
   const earningData = [
     {
       icon: "Invoices",
-      amount: powerProject.invoice_90_days,
+      amount: powerProject.invoice_30_days,
       percentage: "",
-      title: "last 90 Days",
+      title: "last 30 Days",
       iconColor: "#03C9D7",
       iconBg: "#E5FAFB",
       pcColor: "red-600",
     },
     {
       icon: "Payments",
-      amount: powerProject.received_90_days,
+      amount: powerProject.received_30_days,
       percentage: "",
-      title: "Last 90 Days",
+      title: "Last 30 Days",
       iconColor: "rgb(0, 194, 146)",
       iconBg: "rgb(235, 250, 242)",
       pcColor: "red-600",

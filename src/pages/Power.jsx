@@ -47,7 +47,7 @@ const Ecommerce = () => {
   const sendGetRequest = async () => {
     try {
       const resp = await axios.get(
-        "http://192.168.1.10/hrms/public/api/projectData"
+        "http://192.168.1.10/hrms/public/api/dashboardData"
       );
       setPowerProject(await resp.data);
     } catch (err) {
@@ -69,17 +69,16 @@ const Ecommerce = () => {
                 type="button"
                 className="text-2xl opacity-0.9 rounded-full  p-4 hover:drop-shadow-xl"
                 style={{
-                  color: "red",
-                  backgroundColor: "Yellow",
+                  color: "black",
+                  backgroundColor: "#99ccff",
                   fontSize: "50px",
                 }}
               >
-                <MdLanguage />
+                <p className="text-2xl font-bold">
+                  {powerProject.total_power_projects_running}NOS
+                </p>
               </button>
               <p className="font-bold text-black-400">Running Projects</p>
-              <p className="text-2xl font-bold">
-                {powerProject.total_power_projects_running}NOS
-              </p>
             </div>
             {/* <button
               type="button"

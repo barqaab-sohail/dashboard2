@@ -19,11 +19,19 @@ import { ordersData, contextMenuItems, ordersGrid } from "../data/dummy";
 
 const projectHeading = [
   {
+    field: "projectType",
+    headerText: "Project Type",
+    width: "100",
+    editType: "dropdownedit",
+    textAlign: "Left",
+  },
+  {
     field: "projectName",
     headerText: "Project Name",
     width: "450",
     editType: "dropdownedit",
     textAlign: "Left",
+    format: "yMd",
   },
   {
     field: "paymentReceived",
@@ -44,48 +52,26 @@ const projectHeading = [
     headerText: "Budget Utilize",
     width: "100",
     editType: "dropdownedit",
-    textAlign: "Left",
+    textAlign: "Center",
   },
   {
     field: "projectProgress",
     headerText: "Overall Progress",
     width: "100",
     editType: "dropdownedit",
-    textAlign: "Left",
+    textAlign: "Center",
   },
 ];
 
-const projectData = [
-  {
-    projectName:
-      "500/220/132 KV Lahore North Substation & Extension Works at 500/220/132 KV Nokhar Substation 500/220/132 KV Lahore North Substation & Extension Works at 500/220/132 KV Nokhar Substation 500/220/132 KV Lahore North Substation & Extension Works at 500/220/132 KV Nokhar Substation",
-    paymentReceived: "20,000,000",
-    pendingPayment: "10,000,000",
-    budgetUtilization: "30%",
-    projectProgress: "20%",
-  },
-  {
-    projectName: "SCADA Phase-III",
-    paymentReceived: "20,000,000",
-    pendingPayment: "10,000,000",
-    budgetUtilization: "30%",
-    projectProgress: "20%",
-  },
-  {
-    projectName: "SCADA Phase-III",
-    paymentReceived: "20,000,000",
-    pendingPayment: "10,000,000",
-    budgetUtilization: "30%",
-    projectProgress: "20%",
-  },
-  {
-    projectName: "SCADA Phase-III",
-    paymentReceived: "20,000,000",
-    pendingPayment: "10,000,000",
-    budgetUtilization: "30%",
-    projectProgress: "20%",
-  },
-];
+// const projectData = [
+//   {
+//     projectName: "SCADA Phase-III",
+//     paymentReceived: "20,000,000",
+//     pendingPayment: "10,000,000",
+//     budgetUtilization: "30%",
+//     projectProgress: "20%",
+//   },
+// ];
 
 const PowerRunningProjects = () => {
   const editing = { allowDeleting: false, allowEditing: false };
